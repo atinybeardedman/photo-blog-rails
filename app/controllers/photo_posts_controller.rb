@@ -65,6 +65,6 @@ class PhotoPostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def photo_post_params
-      params.fetch(:photo_post, {})
+      params.require(:photo_post).permit(:title, :photo)
     end
 end
